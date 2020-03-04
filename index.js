@@ -6,8 +6,6 @@ let express = require ('express');
 let apiRoutes = require('./api-routes');
 let app = express();
 
-var port = process.env.port || 8080;
-
 app.use('/api', apiRoutes);
 
 app.use(bodyParser.urlencoded({
@@ -20,5 +18,5 @@ mongoose.connect(process.env.CONNECTION, {useNewUrlParser: true});
 //configuration.getConnection(),
 var db = mongoose.connection;
 
-app.listen(port, function(){
+app.listen(process.env.PORT || 8080, function(){
 });
