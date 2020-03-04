@@ -4,7 +4,10 @@ let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let express = require ('express');
 let apiRoutes = require('./api-routes');
+let cors = require('cors');
 let app = express();
+
+app.use(cors())
 
 app.use('/api', apiRoutes);
 
