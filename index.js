@@ -1,3 +1,5 @@
+
+let configuration = require('./config');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let express = require ('express');
@@ -14,16 +16,9 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://atlasAdmin:@cluster0-gp1rj.gcp.mongodb.net/Portfolio?retryWrites=true&w=majority', {useNewUrlParser: true});
+mongoose.connect(configuration.getConnection(), {useNewUrlParser: true});
 
 var db = mongoose.connection;
 
-if(!db){
-    console.log("error connection db");
-}else{
-    console.log("db ok");
-}
-
 app.listen(port, function(){
-    console.log("running on port : " + port);
 });

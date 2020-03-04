@@ -3,7 +3,6 @@ Skill = require('../models/skillModel');
 //Getting all skills -> Only GET api over here
 exports.index = function(req, res) {
     Skill.get(function(err, skills){
-        console.log(skills);
         if(err){
             res.json({
                 status: "error",
@@ -17,3 +16,5 @@ exports.index = function(req, res) {
         });
     });
 };
+
+//We can improve our api by adding some insert / update / delete function, might be later though.
