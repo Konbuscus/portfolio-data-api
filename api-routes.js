@@ -14,9 +14,8 @@ router.route('/skills').get(skillController.index);
 router.route('/techs').get(techController.index);
 router.route('/educations').get(educationController.index);
 router.route('/workexperiences').get(workExperienceController.index);
-
-//TODO: route by id for details
 router.route('/projects').get(projectController.index); 
+router.route('/projects/:_id').get(projectController.view);
 
 
 module.exports = router;

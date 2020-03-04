@@ -17,3 +17,19 @@ exports.index = function(req, res) {
     });
 
 };
+
+exports.view = function(req, res){
+
+    Project.findById(req.params._id, function(err, project){
+        act.findById(req.params._id, function (err, project) {
+            if (err){
+                res.send(err);
+            }
+            res.json({
+                message: 'project details loading..',
+                data: project
+            });
+    });
+
+    });
+};
