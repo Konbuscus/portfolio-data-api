@@ -16,8 +16,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-mongoose.connect(configuration.getConnection(), {useNewUrlParser: true});
-
+mongoose.connect(process.env.CONNECTION, {useNewUrlParser: true});
+//configuration.getConnection(),
 var db = mongoose.connection;
 
 app.listen(port, function(){
