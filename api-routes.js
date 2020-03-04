@@ -6,8 +6,10 @@ router.get('/', function(req, res) {
 
 var skillController = require('./controllers/skillController');
 var techController = require('./controllers/techController');
+var educationController = require('./controllers/educationController');
 
 router.route('/skills').get(skillController.index);
 router.route('/techs').get(techController.index);
+router.route('/educations').get(educationController.index);
 
 module.exports = router;

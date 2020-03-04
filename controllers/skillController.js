@@ -2,7 +2,8 @@ Skill = require('../models/skillModel');
 
 //Getting all skills -> Only GET api over here
 exports.index = function(req, res) {
-    Skill.get(function(err, skills){
+    Skill.get(function(err, skills)
+    {
         if(err){
             res.json({
                 status: "error",
