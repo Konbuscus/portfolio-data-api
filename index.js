@@ -1,5 +1,5 @@
 
-let configuration = require('./config');
+//let configuration = require('./config');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let express = require ('express');
