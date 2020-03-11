@@ -12,7 +12,7 @@ exports.index = function(req, res) {
         res.json({
             status: "success",
             message: "contacts informations retrieved successfully",
-            data: contact
+            data: contact.sort((a,b) => a.Network.localeCompare(b.Network))
         });
     });
 
