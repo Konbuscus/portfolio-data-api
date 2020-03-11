@@ -9,7 +9,11 @@ var contactSchema = mongoose.Schema({
     Value : {
         type: String,
         required: true
-    }
+    },
+    Title : {
+        type: String,
+        required: true
+    },
 });
 
 //Export EducationModel model
