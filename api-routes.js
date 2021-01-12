@@ -19,6 +19,6 @@ router.route('/workexperiences').get(workExperienceController.index);
 router.route('/projects').get(projectController.index); 
 router.route('/projects/:_id').get(projectController.view);
 router.route('/contact').get(contactController.index);
-router.route('crypto').post(cryptoController.post);
+router.route('crypto').post(cryptoController.createData);
 
 module.exports = router;
