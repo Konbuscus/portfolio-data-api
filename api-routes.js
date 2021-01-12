@@ -10,6 +10,7 @@ var educationController = require('./controllers/educationController');
 var workExperienceController = require('./controllers/workExperienceController');
 var projectController = require('./controllers/projectController');
 var contactController = require('./controllers/contactController');
+var cryptoController = require('./controllers/cryptoController')
 
 router.route('/skills').get(skillController.index);
 router.route('/techs').get(techController.index);
@@ -18,5 +19,6 @@ router.route('/workexperiences').get(workExperienceController.index);
 router.route('/projects').get(projectController.index); 
 router.route('/projects/:_id').get(projectController.view);
 router.route('/contact').get(contactController.index);
+router.route('crypto').post(cryptoController.post);
 
 module.exports = router;
