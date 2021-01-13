@@ -2,19 +2,19 @@ var mongoose = require('mongoose');
 
 var cryptoSchema = mongoose.Schema({
 
-    LastDate:{
+    crypto_last_date:{
         type: String,
         required: true
     },
-    Name : {
+    crypto_last_price_eur : {
         type: String,
         required: true
     },
-    Price_EUR : {
+    crypto_last_price_usd : {
         type: String,
         required: true
     },
-    Price_USD:{
+    crypto_name:{
         type: String,
         required : true
     }
@@ -25,8 +25,4 @@ var Crypto = module.exports = mongoose.model('cryptohistory', cryptoSchema);
 
 module.exports.get = function (callback, limit){
     Crypto.find(callback).limit(limit);
-}
-
-module.exports.createData = function(callback, imit){
-    Crypto.createData(callback);
 }

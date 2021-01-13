@@ -9,15 +9,15 @@ let app = express();
 
 app.use(cors())
 
-app.use('/api', apiRoutes);
-
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
 app.use(bodyParser.json());
 
+app.use('/api', apiRoutes);
 mongoose.connect(process.env.CONNECTION, {useNewUrlParser: true});
+//process.env.CONNECTION
 //configuration.getConnection(),
 var db = mongoose.connection;
 
