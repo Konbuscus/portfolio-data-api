@@ -34,7 +34,7 @@ exports.postData = function(req, res){
     }
     Crypto.insertMany(cryptos, function(error, cryptos) {
 
-        if(err){
+        if(error){
             res.json({error: error});
         }
         else
