@@ -20,6 +20,7 @@ exports.index = function(req, res) {
 
 exports.postData = function(req, res){
   
+    var cryptos = [];
     var data = req.body;
     for(var i = 0; i< data.length;i++)
     {
@@ -29,11 +30,9 @@ exports.postData = function(req, res){
             crypto_last_price_usd :data[i].crypto_last_price_usd,
             crypto_name :data[i].crypto_name
         });
-        console.log(crypto)
-        crypto.save(function(err, crypto){
-           if(err){
-               console.log(err)
-           }
-        });       
+        cryptos.push(cryptos)
+        Crypto.insertMany(cryptos).catch(function(error){
+            console.log(error);
+        });      
     }
 }
