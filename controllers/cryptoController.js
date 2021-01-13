@@ -32,14 +32,15 @@ exports.postData = function(req, res){
         });
         cryptos.push(crypto);
     }
-    Crypto.insertMany(cryptos).then(function(){
-        res.json({
-            "success" : "bravo"
-        });
-    }).catch(function(error){
-        res.json({
-            "error" : error
-        });
-    });  
+    Crypto.insertMany(cryptos, function(error, cryptos) {
+
+        if(err){
+            res.json({error: error});
+        }
+        else
+            res.json({
+                cryptos : "inserted"
+            });
+    });
 
 }
