@@ -31,9 +31,10 @@ exports.postData = function(req, res){
             crypto_name :data[i].crypto_name
         });
     }
-    Crypto.insertMany(cryptos).then(function(err, data){
-        console.log(err,data);
+    Crypto.insertMany(cryptos).then(function(){
+        
     }).catch(function(error){
+        console.log("fuck");
         console.log(error);
     });      
 }
