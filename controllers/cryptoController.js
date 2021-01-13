@@ -32,7 +32,9 @@ exports.postData = function(req, res){
         });
         cryptos.push(crypto)
     }
-    Crypto.insertMany(cryptos).catch(function(error){
+    Crypto.insertMany(cryptos).then(function(){
+        console.log("cryptos inserted")
+    }).catch(function(error){
         console.log(error);
     });      
 }
