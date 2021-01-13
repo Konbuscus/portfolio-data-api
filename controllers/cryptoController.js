@@ -30,7 +30,7 @@ exports.postData = function(req, res){
             crypto_last_price_usd :data[i].crypto_last_price_usd,
             crypto_name :data[i].crypto_name
         });
-        cryptos.push(cryptos)
+        cryptos.push(crypto)
         Crypto.insertMany(cryptos).catch(function(error){
             console.log(error);
         });      
