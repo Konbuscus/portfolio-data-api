@@ -7,7 +7,7 @@ var cryptoSchema = mongoose.Schema({
         required: true
     },
     crypto_last_price_eur : {
-        type: Number,
+        type: SchemaTypes.Double
         required: true
     },
     crypto_last_price_usd : {
