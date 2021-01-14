@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var SchemaTypes = mongoose.Schema.Types;
+
 var cryptoSchema = mongoose.Schema({
 
     crypto_last_date:{
@@ -7,11 +7,11 @@ var cryptoSchema = mongoose.Schema({
         required: true
     },
     crypto_last_price_eur : {
-        type: SchemaTypes.Double,
+        type: mongoose.Decimal128,
         required: true
     },
     crypto_last_price_usd : {
-        type: Number,
+          type: mongoose.Decimal128,
         required: true
     },
     crypto_name:{
