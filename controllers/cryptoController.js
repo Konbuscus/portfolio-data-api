@@ -24,8 +24,11 @@ exports.postData = function(req, res){
     var data = req.body;
     for(var i = 0; i< data.length;i++)
     {
+        timestamp = (new Date(data[i].crypto_last_date)).getTime() / 1000;
+		console.log(timestamp);
         var crypto = new Crypto({
-            crypto_last_date : data[i].crypto_last_date,
+
+            crypto_last_date : timestamp,
             crypto_last_price_eur : data[i].crypto_last_price_eur,
             crypto_last_price_usd :data[i].crypto_last_price_usd,
             crypto_name :data[i].crypto_name
