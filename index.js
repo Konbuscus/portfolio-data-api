@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use('/api', apiRoutes);
-mongoose.connect(process.env.CONNECTION, {useNewUrlParser: true,  useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://atlasAdmin:Jemangedesraviolis0@cluster0-gp1rj.gcp.mongodb.net/Portfolio?retryWrites=true&w=majority', {useNewUrlParser: true,  useUnifiedTopology: true});
 //process.env.CONNECTION
 //configuration.getConnection(),
 var db = mongoose.connection;

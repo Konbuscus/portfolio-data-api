@@ -20,5 +20,6 @@ router.route('/projects').get(projectController.index);
 router.route('/projects/:_id').get(projectController.view);
 router.route('/contact').get(contactController.index);
 router.route('/crypto').post(cryptoController.postData);
+router.route('/getcryptos').get(cryptoController.index);
 
 module.exports = router;
